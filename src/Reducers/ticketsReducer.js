@@ -24,6 +24,17 @@ switch(action.type)
        })
        return filteredTickets
     }
+    case 'CLOSE_TICKET':{
+        return state.map((ticket)=>{
+            if(ticket._id==action.payload._id)
+            {
+                return JSON.parse(JSON.stringify(action.payload))
+            }
+            else {
+                return JSON.parse(JSON.stringify(ticket))
+            }
+        })
+    }
     default:{
         return [...state]
     }

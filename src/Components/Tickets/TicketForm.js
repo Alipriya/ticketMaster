@@ -33,6 +33,7 @@ function TicketForm(props)
             employees:[{_id:empName}],
             message:message,
             code:"DCT-"+Math.floor(Math.random() * 100)
+           
         }
         console.log(formData)
         props.handleSubmit(formData)

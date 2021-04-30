@@ -89,3 +89,24 @@ export const setStartDelete=(ticket_id)=>{
     })
     }
 }
+export const close_Ticket=(ticket)=>{
+return{
+    type:"CLOSE_TICKET",
+    payload:ticket
+}
+}
+export const setCloseTicket=(ticketid,formData)=>{
+return (dispatch)=>{
+    axios.put(`https://dct-ticket-master.herokuapp.com/tickets/${ticketid}`,formData,
+    {
+        headers:{
+            "x-auth":localStorage.getItem("token")
+        }
+    })
+    .then((response)=>{
+        const ticket=response.data
+        dispatch(close_Ticket(ticket))
+    })
+
+}
+}

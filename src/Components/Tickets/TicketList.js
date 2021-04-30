@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
-import {setStartDelete} from '../../Actions/TicketAction'
+import {setStartDelete,setCloseTicket} from '../../Actions/TicketAction'
 function TicketList()
 {
     let dispatch=useDispatch()
@@ -42,9 +42,9 @@ const employeesData=useSelector((state)=>{
                  
                  <tr>
                      <td><Link to={`/ticketShow/${ticket._id}`}>{ticket.code}</Link></td>
-                     {console.log("check+++",customersData.find((cust)=>{
+                     {/* {console.log("check+++",customersData.find((cust)=>{
                    return cust._id==ticket.customer
-                     })["name"])}
+                     })["name"])} */}
                      <td>{customersData.find((cust)=>{
                         return cust._id==ticket.customer
                           })["name"]}</td>
@@ -61,6 +61,7 @@ const employeesData=useSelector((state)=>{
                     }
                     <td><Link to={`/ticketEdit/${ticket._id}`}>Edit</Link>
                     <button onClick={()=>dispatch(setStartDelete(ticket._id))}>Delete</button>
+                    <button onClick={()=>dispatch(setCloseTicket(ticket._id,{isResolved:true}))}>Close The Ticket</button>
                     </td>
                  </tr>
                  
