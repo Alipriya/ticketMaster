@@ -15,6 +15,7 @@ import TicketEdit from "./Components/Tickets/TicketEdit";
 import TicketShow from "./Components/Tickets/TicketShow";
 import "./App.css";
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 function App() {
 	return (
 		<BrowserRouter>
@@ -36,6 +37,7 @@ function App() {
 					<Route path="/tickets" component={TicketList} />
 					<Route path="/" component={Home} />
 				</Switch>
+        <Footer/>
 			</div>
 		</BrowserRouter>
 	);

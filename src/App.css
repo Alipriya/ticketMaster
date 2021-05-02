@@ -1,8 +1,23 @@
+.App{
+    height: 100vh;
+  
+  /* grid container settings */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+
+}
 .header {
+
 	display: grid;
 	grid-template-rows: 100px;
 	grid-template-columns: repeat(12, 1fr);
-	grid-gap: 5px;
+    grid-gap: 5px;
+    grid-area: header;
 }
 .headerContent {
 	display: flex;
@@ -53,7 +68,7 @@
 .homePage {
     grid-column: 2/12;
     color: #0e1f58;
-  
+     grid-area: main;
 }
 .section2 {
 	grid-column: 2/12;
@@ -84,7 +99,8 @@
 	justify-self: center;
 	font-size: 40px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-weight: normal;
+    font-weight: normal;
+    
 }
 .aboutUs > h2,
 .contactUs > h2 {
@@ -165,5 +181,6 @@
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	background-color: blue;
-	width: 100%;
+    width: 100%;
+    grid-area: footer;
 }
