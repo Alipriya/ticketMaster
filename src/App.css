@@ -1,23 +1,21 @@
-.App{
-    height: 100vh;
-  
-  /* grid container settings */
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: 
-    'header'
-    'main'
-    'footer';
+.App {
+	height: 100vh;
 
+	/* grid container settings */
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
 }
 .header {
-
 	display: grid;
 	grid-template-rows: 100px;
 	grid-template-columns: repeat(12, 1fr);
-    grid-gap: 5px;
-    grid-area: header;
+	grid-gap: 5px;
+	grid-area: header;
 }
 .headerContent {
 	display: flex;
@@ -35,40 +33,40 @@
 	height: 1px;
 }
 .homeLink {
-    grid-column: 2 / span 2;
-    color: #0e1f58;
-    font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	grid-column: 2 / span 2;
+	color: #0e1f58;
+	font-size: 14px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .customersLink {
-    grid-column: 4 / span 2;
-    color: #0e1f58;
-    font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	grid-column: 4 / span 2;
+	color: #0e1f58;
+	font-size: 14px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .departmentsLink {
-    grid-column: 6 / span 2;
-    color: #0e1f58;
-    font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	grid-column: 6 / span 2;
+	color: #0e1f58;
+	font-size: 14px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .employeesLink {
-    grid-column: 8 / span 2;
-    color: #0e1f58;
-    font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	grid-column: 8 / span 2;
+	color: #0e1f58;
+	font-size: 14px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .ticketsLink {
-    grid-column: 10 / span2;
-    color: #0e1f58;
-    font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	grid-column: 10 / span2;
+	color: #0e1f58;
+	font-size: 14px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .homePage {
-    grid-column: 2/12;
-    color: #0e1f58;
-     grid-area: main;
+	grid-column: 2/12;
+	color: #0e1f58;
+	grid-area: main;
 }
 .section2 {
 	grid-column: 2/12;
@@ -99,8 +97,7 @@
 	justify-self: center;
 	font-size: 40px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: normal;
-    
+	font-weight: normal;
 }
 .aboutUs > h2,
 .contactUs > h2 {
@@ -147,7 +144,7 @@
 .section4 > img {
 	grid-column: 7/-1;
 	height: 100%;
-	width:100%;
+	width: 100%;
 }
 .section4 > div {
 	grid-column: 1 / span 5;
@@ -181,6 +178,6 @@
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	background-color: blue;
-    width: 100%;
-    grid-area: footer;
+	width: 100%;
+	grid-area: footer;
 }
