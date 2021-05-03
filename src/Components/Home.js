@@ -10,7 +10,7 @@ import ticketMaster from './ticketMaster.jpeg'
 import "../App.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar,faFileContract } from '@fortawesome/free-solid-svg-icons'
-import Footer from "./Footer";
+
 function Home() {
 	let dispatch = useDispatch();
 	useEffect(() => {

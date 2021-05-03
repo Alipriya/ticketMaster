@@ -61,8 +61,8 @@ const employeesData=useSelector((state)=>{
                     <td
                     className="Actions"
                     ><Link to={`/ticketEdit/${ticket._id}`}>Edit</Link>
-                    <button onClick={()=>dispatch(setStartDelete(ticket._id))}>Delete</button>
-                    <button onClick={()=>dispatch(setCloseTicket(ticket._id,{isResolved:true}))}>Close Ticket</button>
+                    <button className="button" onClick={()=>dispatch(setStartDelete(ticket._id))}>Delete</button>
+                    <button  className="button" onClick={()=>dispatch(setCloseTicket(ticket._id,{isResolved:true}))}>Close Ticket</button>
                     </td>
                  </tr>
                  

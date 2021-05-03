@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import {useSelector} from 'react-redux'
+import Employee from '../Employee.jpeg'
 function EmployeeForm(props)
 {
    
@@ -29,7 +30,7 @@ props.handleSubmit(formData)
 }
     
     return(<div>
-      <form className="Form">
+      <form className="Form" style={{background:Employee,backgroundSize: "cover"}}>
           <label>Name</label>
           <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}} />
           <br/>
@@ -47,7 +48,7 @@ props.handleSubmit(formData)
           })}
           </select>
           <br/>
-          <button onClick={(e)=>handleSubmit(e)}>Submit</button>
+          <button className="button" onClick={(e)=>handleSubmit(e)}>Submit</button>
           <br/>
     </form>  
     </div>)

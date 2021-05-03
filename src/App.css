@@ -187,6 +187,10 @@
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+.button {
+    background-color: #41007F;
+    color: white;
+}
 .styled-table thead tr {
     background-color: #41007F;
     color: #ffffff;
@@ -227,6 +231,7 @@
     flex-direction: column;
     width: 50%;
     padding-left: 30%;
+    
 }
 .Form>label{
     font-size: 13pt;

@@ -21,7 +21,7 @@ function CustomerForm(props)
     }
     return(<div>
         <form className="Form">
-            <label>Customer Name</label>
+            <label>Customer Name </label>
             <input type="text" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}/>
             <br/>
             <label>Customer Email</label>
@@ -30,7 +30,7 @@ function CustomerForm(props)
             <label>Customer Mobile</label>
             <input type="text" name="mobile" value={mobile} onChange={(e)=>{setMobile(e.target.value)}}/>
             <br/>
-            <button onClick={(e)=>handleSubmit(e)}>Submit</button>
+            <button className="button" onClick={(e)=>handleSubmit(e)}>Submit</button>
         </form>
     </div>)
 
