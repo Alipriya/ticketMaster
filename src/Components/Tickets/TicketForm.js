@@ -108,32 +108,39 @@ function TicketForm(props) {
 						value="High"
 						name="priority"
 						checked={priority === "High"}
-					/>
+					/>{" "}
 					High
 					<input
 						type="radio"
 						value="Medium"
 						name="priority"
 						checked={priority === "Medium"}
-					/>
+					/>{" "}
 					Medium
 					<input
 						type="radio"
 						value="Low"
 						name="priority"
 						checked={priority === "Low"}
-					/>
+					/>{" "}
 					Low
 				</div>
 				<label>Message</label>
 
 				<textarea type="text" value={message} onChange={handleChange} />
 				<br />
-				<button className="button" onClick={handleSubmit}>
-					Submit
-				</button>
-				<br />
 			</form>
+            <div style={{
+            display: "flex",
+            flexDirection:"column",
+            width:"50%",
+            paddingLeft:"30%"
+            }}>
+			<button className="button" onClick={handleSubmit}>
+				Submit
+			</button>
+            </div>
+			<br />
 		</div>
 	);
 }

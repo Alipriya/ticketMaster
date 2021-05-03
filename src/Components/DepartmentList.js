@@ -60,6 +60,7 @@ function DepartmentList() {
 								<td>{dept.name}</td>
 								<td style={{ display: "flex", justifyContent: "center" }}>
 									<button
+									    className="button1"
 										onClick={() => {
 											handleRemove(dept._id);
 										}}

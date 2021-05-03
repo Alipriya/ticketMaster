@@ -264,7 +264,8 @@
 .addDepartment > button {
 	grid-column: 6/8;
 	background-color: #41007f;
-	color: #ffffff;
+    color: #ffffff;
+    height: 45px;
 }
 .button1 {
     background-color: #41007F;
