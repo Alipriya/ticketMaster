@@ -69,7 +69,6 @@
 .section2 {
 	grid-column: 2/12;
 	background-color: #f7f7f0;
-	/* grid-row: span2; */
 	height: 115px;
 }
 .section2 > h1 {
@@ -180,61 +179,94 @@
 	grid-area: footer;
 }
 .styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 400px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .button {
-    background-color: #41007F;
+	background-color: #41007f;
+    width: 100%;
     color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
 }
 .styled-table thead tr {
-    background-color: #41007F;
-    color: #ffffff;
-    text-align: left;
+	background-color: #41007f;
+	color: #ffffff;
+	text-align: left;
 }
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+	padding: 12px 15px;
 }
 .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+	background-color: #f3f3f3;
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #41007F;
+	border-bottom: 2px solid #41007f;
 }
 .styled-table tbody tr.active-row {
-    font-weight: bold;
-    color:#41007F;
+	font-weight: bold;
+	color: #41007f;
 }
-.customerList, .employeeList,.departmentList,.ticketList{
-    display: grid;
+.customerList,
+.employeeList,
+.departmentList,
+.ticketList {
+	display: grid;
 }
-.Actions{
-    display: flex;
-    justify-content: space-evenly;  
+.Actions {
+	display: flex;
+	justify-content: space-evenly;
 }
-.ActionTitle{
-    display: flex;
-    justify-content: center;
+.ActionTitle {
+	display: flex;
+	justify-content: center;
 }
-.Form{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding-left: 30%;
-    
+.Form {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	padding-left: 30%;
 }
-.Form>label{
-    font-size: 13pt;
-    line-height: 24pt;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.Form > label {
+	font-size: 13pt;
+	line-height: 24pt;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.Form > input, .Form>select ,.Form>textarea,.addDepartment>input{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+.addDepartment {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+}
+.addDepartment > input {
+	grid-column: 2/5;
+}
+.addDepartment > button {
+	grid-column: 6/8;
+	background-color: #41007f;
+	color: #ffffff;
+}
+.button1 {
+    background-color: #41007F;
+    color: white;
 }

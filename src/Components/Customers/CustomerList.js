@@ -38,7 +38,7 @@ function CustomerList(props)
                             <td
                             className="Actions"
                             ><Link to={`/customersEdit/${cust._id}`}>Edit</Link>
-                            <button className="button" onClick={()=>{handleRemove(cust._id)}}>Delete</button>
+                            <button className="button1" onClick={()=>{handleRemove(cust._id)}}>Delete</button>
                             </td>
                             </tr>)
                       })}

@@ -35,7 +35,7 @@ return(<div className="employeeList">
                     <td>{emp.mobile}</td>
                     <td>{emp.department["name"]}</td>
                     <td className="Actions"><Link to={`/employeeEdit/${emp._id}`}>Edit</Link>
-                    <button className="button" onClick={()=>handleRemove(emp._id)}>Remove</button>
+                    <button className="button1" onClick={()=>handleRemove(emp._id)}>Remove</button>
                     </td>
                 </tr>)
             })}
