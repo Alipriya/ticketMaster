@@ -1,7 +1,5 @@
 .App {
 	height: 100vh;
-
-	/* grid container settings */
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto 1fr auto;
@@ -223,4 +221,15 @@
 .ActionTitle{
     display: flex;
     justify-content: center;
+}
+.Form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 30%;
+}
+.Form>label{
+    font-size: 13pt;
+    line-height: 24pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

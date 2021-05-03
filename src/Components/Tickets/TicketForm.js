@@ -40,8 +40,8 @@ function TicketForm(props)
     }
     return(
         <div>
-    <form>
-        <label>Name of the Customer</label>
+    <form className="Form">
+        <label>Customer Name</label>
         <select value={customerName} onChange={(e)=>{
         setCustomerName(e.target.value)
         }}>
@@ -51,7 +51,7 @@ function TicketForm(props)
             })}
         </select>
         <br/>
-        <label>Department</label>
+        <label>Department Name</label>
         <select value={departmentName} onChange={(e)=>setDepartmentName(e.target.value)}>
             <option>Select</option>
             {departmentData.map((dept)=>{
@@ -59,7 +59,7 @@ function TicketForm(props)
             })}
         </select>
         <br/>
-      <label>Select an Employee</label>
+      <label>Employee Name</label>
       <select value={empName} onChange={(e)=>{setEmpName(e.target.value)}}>
         <option>Select</option>
       {
@@ -73,15 +73,18 @@ function TicketForm(props)
 <br/>
  <label>Priority</label>
  <div onChange={onChangeValue}>
-        <input type="radio" value="High" name="priority" checked={priority==="High"} /> High
-        <input type="radio" value="Medium" name="priority" checked={priority==="Medium"} /> Medium
-        <input type="radio" value="Low" name="priority" checked={priority==="Low"}  /> Low
+        <input type="radio" value="High" name="priority" checked={priority==="High"} />High
+        <input type="radio" value="Medium" name="priority" checked={priority==="Medium"} />Medium
+        <input type="radio" value="Low" name="priority" checked={priority==="Low"}  />Low
 </div>
 <label>Message</label>
 
 <textarea type="text" value={message} onChange={handleChange}/>
+<br/>
+<button onClick={handleSubmit}>Submit</button>
+<br/>
     </form>
-    <button onClick={handleSubmit}>Submit</button>
+    
     </div>
     
     )

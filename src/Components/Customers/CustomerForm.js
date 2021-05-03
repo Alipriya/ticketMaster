@@ -20,7 +20,7 @@ function CustomerForm(props)
       props.handleSubmit(formData)
     }
     return(<div>
-        <form>
+        <form className="Form">
             <label>Customer Name</label>
             <input type="text" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}/>
             <br/>
