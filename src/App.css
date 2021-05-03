@@ -216,3 +216,11 @@
 .customerList, .employeeList,.departmentList,.ticketList{
     display: grid;
 }
+.Actions{
+    display: flex;
+    justify-content: space-evenly;  
+}
+.ActionTitle{
+    display: flex;
+    justify-content: center;
+}

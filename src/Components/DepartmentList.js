@@ -1,6 +1,6 @@
 import {React,useEffect,useState} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
-import {startSetDepartment,setDeleteDepartment,setAddDepartment} from '../Actions/DepartmentAction'
+import {setDeleteDepartment,setAddDepartment} from '../Actions/DepartmentAction'
 import "../App.css"
 function DepartmentList()
 {
@@ -34,7 +34,10 @@ function DepartmentList()
     <thead>
         <tr>
         <th>Name</th>
-        <th>Actions</th>
+        <th style={{
+    display: "flex",
+    justifyContent:"space-around"
+}}>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -43,7 +46,7 @@ function DepartmentList()
             return(
                 <tr key={index}>
                     <td>{dept.name}</td>
-                    <td><button onClick={()=>{handleRemove(dept._id)}}>Remove</button></td>
+                    <td style={{display: "flex",justifyContent:"center"}}><button onClick={()=>{handleRemove(dept._id)}}>Remove</button></td>
                 </tr>
             )
         })

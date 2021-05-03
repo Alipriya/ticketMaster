@@ -23,7 +23,7 @@ function CustomerList(props)
                          <td>Name</td>
                          <td>Email</td>
                          <td>Mobile</td>
-                         <td>Actions</td>
+                         <td className="ActionTitle">Actions</td>
                      </tr>
                  </thead>
                  {props.customers && props.customers.length>0?
@@ -35,8 +35,11 @@ function CustomerList(props)
                             <td><Link to={`/customerShow/${cust._id}`}>{cust.name}</Link></td>
                             <td>{cust.email}</td>
                             <td>{cust.mobile}</td>
-                            <td><Link to={`/customersEdit/${cust._id}`}>Edit</Link>
-                            <button onClick={()=>{handleRemove(cust._id)}}>Delete</button></td>
+                            <td
+                            className="Actions"
+                            ><Link to={`/customersEdit/${cust._id}`}>Edit</Link>
+                            <button onClick={()=>{handleRemove(cust._id)}}>Delete</button>
+                            </td>
                             </tr>)
                       })}
                     </tbody>

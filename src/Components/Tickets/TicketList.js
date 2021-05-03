@@ -33,7 +33,7 @@ const employeesData=useSelector((state)=>{
             <th>Priority</th>
             <th>Message</th>
             <th>Status</th>
-            <th>Action</th>
+            <th className="ActionTitle">Action</th>
             </tr>
             </thead>
      
@@ -44,9 +44,6 @@ const employeesData=useSelector((state)=>{
                  
                  <tr>
                      <td><Link to={`/ticketShow/${ticket._id}`}>{ticket.code}</Link></td>
-                     {/* {console.log("check+++",customersData.find((cust)=>{
-                   return cust._id==ticket.customer
-                     })["name"])} */}
                      <td>{customersData.find((cust)=>{
                         return cust._id==ticket.customer
                           })["name"]}</td>
@@ -61,9 +58,11 @@ const employeesData=useSelector((state)=>{
                      {ticket.isResolved?
                     (<td>Complete</td>):(<td>Open</td>)
                     }
-                    <td><Link to={`/ticketEdit/${ticket._id}`}>Edit</Link>
+                    <td
+                    className="Actions"
+                    ><Link to={`/ticketEdit/${ticket._id}`}>Edit</Link>
                     <button onClick={()=>dispatch(setStartDelete(ticket._id))}>Delete</button>
-                    <button onClick={()=>dispatch(setCloseTicket(ticket._id,{isResolved:true}))}>Close The Ticket</button>
+                    <button onClick={()=>dispatch(setCloseTicket(ticket._id,{isResolved:true}))}>Close Ticket</button>
                     </td>
                  </tr>
                  

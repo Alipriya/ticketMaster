@@ -24,7 +24,7 @@ return(<div className="employeeList">
             <th>Email</th>
             <th>Mobile</th>
             <th>Department</th>
-            <th>Actions</th>
+            <th className="ActionTitle">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -34,7 +34,7 @@ return(<div className="employeeList">
                     <td>{emp.email}</td>
                     <td>{emp.mobile}</td>
                     <td>{emp.department["name"]}</td>
-                    <td><Link to={`/employeeEdit/${emp._id}`}>Edit</Link>
+                    <td className="Actions"><Link to={`/employeeEdit/${emp._id}`}>Edit</Link>
                     <button onClick={()=>handleRemove(emp._id)}>Remove</button>
                     </td>
                 </tr>)
