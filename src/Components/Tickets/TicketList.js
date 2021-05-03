@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
 import {setStartDelete,setCloseTicket} from '../../Actions/TicketAction'
+import "../../App.css"
 function TicketList()
 {
     let dispatch=useDispatch()
@@ -19,10 +20,10 @@ const employeesData=useSelector((state)=>{
     return state.employees
 })
 
-    return(<div>
+    return(<div className="ticketList">
         <h1>Listing Tickets {ticketsData.length}</h1>
         <Link to="/addTicket">Add Ticket</Link>
-        <table>
+        <table className="styled-table">
             <thead>
             <tr>
             <th>Code</th>
@@ -35,9 +36,10 @@ const employeesData=useSelector((state)=>{
             <th>Action</th>
             </tr>
             </thead>
-     {
-         ticketsData.map((ticket,index)=>{
-             return(<tbody>
+     
+         <tbody>
+         {ticketsData.map((ticket,index)=>{
+             return(
                  
                  
                  <tr>
@@ -65,9 +67,11 @@ const employeesData=useSelector((state)=>{
                     </td>
                  </tr>
                  
-             </tbody>)
+             )
          })
-     }
+        }
+         </tbody>
+     
         </table>
     </div>)
 

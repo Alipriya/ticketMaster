@@ -1,6 +1,7 @@
 import {React,useEffect,useState} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import {startSetDepartment,setDeleteDepartment,setAddDepartment} from '../Actions/DepartmentAction'
+import "../App.css"
 function DepartmentList()
 {
     const[deprtmnt,setDept]=useState("")
@@ -19,7 +20,7 @@ function DepartmentList()
         dispatch(setAddDepartment({name:deprtmnt}))
         
     }
-    return(<div>
+    return(<div className="departmentList">
      <input
         type="text"
         value={deprtmnt}
@@ -29,23 +30,25 @@ function DepartmentList()
             setDept("")
         }}>Add</button>
 <h1>Listing Departments {departmentList.length}</h1>
-<table>
+<table className="styled-table">
     <thead>
         <tr>
         <th>Name</th>
         <th>Actions</th>
         </tr>
     </thead>
+    <tbody>
     {
         departmentList.map((dept,index)=>{
-            return(<tbody>
+            return(
                 <tr key={index}>
                     <td>{dept.name}</td>
                     <td><button onClick={()=>{handleRemove(dept._id)}}>Remove</button></td>
                 </tr>
-            </tbody>)
+            )
         })
     }
+    </tbody>
 </table>
     </div>)
 }

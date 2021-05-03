@@ -2,7 +2,7 @@ import React,{useEffect} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {setStartEmployees,setDeleteEmployee} from '../../Actions/EmployeeAction'
-
+import "../../App.css"
 function EmployeeList(props)
 {
 let dispatch=useDispatch()
@@ -14,11 +14,11 @@ const handleRemove=(id)=>{
 }
 let employeeList=useSelector((state)=>{
     return state.employees})
-return(<div>
+return(<div className="employeeList">
     <h1>Employee List {employeeList.length}</h1>
     <Link to="/addEmployees">Add Employees</Link>
-    <table>
-        <thead>
+    <table className="styled-table">
+        <thead >
             <tr>
             <th>Name</th>
             <th>Email</th>

@@ -2,6 +2,7 @@ import React,{useEffect} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import { startSetCustomers,startDeleteCustomer } from '../../Actions/CustomerAction'
+import "../../App.css"
 function CustomerList(props)
 {
     useEffect(()=>{
@@ -13,10 +14,10 @@ function CustomerList(props)
       console.log("check id in remove",id)
      props.dispatch(startDeleteCustomer(id,props))
     }
-    return(<div>
+    return(<div className="customerList">
      <Link to="/addCustomer">Add Customer</Link>
      
-             <table>
+             <table className="styled-table">
                  <thead>
                      <tr>
                          <td>Name</td>
