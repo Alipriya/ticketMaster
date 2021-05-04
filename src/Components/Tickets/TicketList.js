@@ -21,7 +21,7 @@ const employeesData=useSelector((state)=>{
 })
 
     return(<div className="ticketList">
-        <h1>Listing Tickets {ticketsData.length}</h1>
+        <h1 style={{fontFamily:"sans-serif"}}>Listing Tickets -{ticketsData.length}</h1>
         <Link to="/addTicket">Add Ticket</Link>
         <table className="styled-table">
             <thead>

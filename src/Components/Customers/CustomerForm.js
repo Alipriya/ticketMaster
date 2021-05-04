@@ -26,13 +26,13 @@ function CustomerForm(props)
     return(<div>
         <form className="Form">
             <label>Customer Name </label>
-            <input type="text" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}/>
+            <input type="text" name="name" value={name} required onChange={(e)=>{setName(e.target.value)}}/>
             <br/>
             <label>Customer Email</label>
-            <input type="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+            <input type="email" name="email" value={email} required onChange={(e)=>setEmail(e.target.value)}/>
             <br/>
             <label>Customer Mobile</label>
-            <input type="text" name="mobile" value={mobile} onChange={(e)=>{setMobile(e.target.value)}}/>
+            <input type="text" name="mobile" value={mobile} required onChange={(e)=>{setMobile(e.target.value)}}/>
             <br/>
             <button className="button" onClick={(e)=>handleSubmit(e)}>Submit</button>
         </form>

@@ -15,7 +15,7 @@ const handleRemove=(id)=>{
 let employeeList=useSelector((state)=>{
     return state.employees})
 return(<div className="employeeList">
-    <h1>Employee List {employeeList.length}</h1>
+    <h1 style={{fontFamily:"sans-serif"}}>Employee List -{employeeList.length}</h1>
     <Link to="/addEmployees">Add Employees</Link>
     <table className="styled-table">
         <thead >

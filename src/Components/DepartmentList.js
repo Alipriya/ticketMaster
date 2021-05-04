@@ -38,7 +38,7 @@ function DepartmentList() {
 			</button>
 			</div>
             <div className="departmentList">
-			<h1>Listing Departments {departmentList.length}</h1>
+			<h1 style={{fontFamily:"sans-serif"}}>Listing Departments -{departmentList.length}</h1>
 			<table className="styled-table">
 				<thead>
 					<tr>
