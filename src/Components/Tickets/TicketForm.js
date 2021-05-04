@@ -48,7 +48,9 @@ function TicketForm(props) {
 	return (
 		<div>
 			<form className="Form">
-				<label>Customer Name</label>
+				<label>
+					Customer Name<span className="manda">*</span>
+				</label>
 				<select
 					value={customerName}
 					onChange={e => {
@@ -65,7 +67,9 @@ function TicketForm(props) {
 					})}
 				</select>
 				<br />
-				<label>Department Name</label>
+				<label>
+					Department Name<span className="manda">*</span>
+				</label>
 				<select
 					value={departmentName}
 					onChange={e => setDepartmentName(e.target.value)}
@@ -80,7 +84,9 @@ function TicketForm(props) {
 					})}
 				</select>
 				<br />
-				<label>Employee Name</label>
+				<label>
+					Employee Name<span className="manda">*</span>
+				</label>
 				<select
 					value={empName}
 					onChange={e => {
@@ -101,7 +107,9 @@ function TicketForm(props) {
 						})}
 				</select>
 				<br />
-				<label>Priority</label>
+				<label>
+					Priority<span className="manda">*</span>
+				</label>
 				<div onChange={onChangeValue}>
 					<input
 						type="radio"
@@ -125,21 +133,30 @@ function TicketForm(props) {
 					/>{" "}
 					Low
 				</div>
-				<label>Message</label>
+				<label>
+					Message<span className="manda">*</span>
+				</label>
 
-				<textarea type="text" value={message} onChange={handleChange} />
+				<textarea
+					placeholder="Enter details of your problem"
+					type="text"
+					value={message}
+					onChange={handleChange}
+				/>
 				<br />
 			</form>
-            <div style={{
-            display: "flex",
-            flexDirection:"column",
-            width:"50%",
-            paddingLeft:"30%"
-            }}>
-			<button className="button" onClick={handleSubmit}>
-				Submit
-			</button>
-            </div>
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					width: "50%",
+					paddingLeft: "30%"
+				}}
+			>
+				<button className="button" onClick={handleSubmit}>
+					Submit
+				</button>
+			</div>
 			<br />
 		</div>
 	);

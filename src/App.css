@@ -220,6 +220,9 @@
 	font-weight: bold;
 	color: #41007f;
 }
+.manda{
+    color: red;
+}
 .customerList,
 .employeeList,
 .departmentList,
@@ -253,6 +256,10 @@
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
+}
+.Form>span
+{
+    color: red;
 }
 .addDepartment {
 	display: grid;

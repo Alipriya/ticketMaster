@@ -30,7 +30,7 @@ function Home() {
 						fontSize: "revert"
 					}}
 				>
-					TicketMaster
+					The Ultimate Solution for Managing Tickets
 				</h1>
 			</div>
       <Carousel/>

@@ -31,16 +31,16 @@ props.handleSubmit(formData)
     
     return(<div>
       <form className="Form" style={{background:Employee,backgroundSize: "cover"}}>
-          <label>Name</label>
-          <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}} />
+          <label>Name<span className="manda">*</span></label>
+          <input placeholder="Enter employee name" type="text" value={name} onChange={(e)=>{setName(e.target.value)}} />
           <br/>
-          <label>Email</label>
-          <input type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+          <label>Email<span className="manda">*</span></label>
+          <input type="text" placeholder="Enter employee email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
           <br/>
-          <label>Mobile</label>
-          <input type="text" value={mobile} onChange={(e)=>{setMobile(e.target.value)}}/>
+          <label>Mobile<span className="manda">*</span></label>
+          <input type="text" placeholder="Enter employee mobile" value={mobile} onChange={(e)=>{setMobile(e.target.value)}}/>
           <br/>
-          <label>Department</label>
+          <label>Department<span className="manda">*</span></label>
           <select value={department} onChange={(e)=>setDepartment(e.target.value)}>
           <option>Select</option>
           {departmentsdata.map((dept)=>{
