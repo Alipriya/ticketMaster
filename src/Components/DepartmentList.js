@@ -7,7 +7,7 @@ import {
 import "../App.css";
 function DepartmentList() {
 	const [deprtmnt, setDept] = useState("");
-
+    const [errors, setErrors] = useState({});
 	let dispatch = useDispatch();
 	useEffect(() => {}, []);
 	let departmentList = useSelector(state => {
@@ -16,8 +16,23 @@ function DepartmentList() {
 	const handleRemove = id => {
 		dispatch(setDeleteDepartment(id));
 	};
+	const validate=()=>{
+		let errors = {};
+
+		let isValid = true;
+		if (!deprtmnt) {
+			isValid = false;
+
+			errors["department"] = "Department cannot be empty.";
+		}
+		setErrors(errors);
+
+		return isValid;
+	}
 	const handleAdd = deprtmnt => {
+		if (validate()) {
 		dispatch(setAddDepartment({ name: deprtmnt }));
+		}
 	};
 	return (
 		<div>
@@ -28,6 +43,7 @@ function DepartmentList() {
 				value={deprtmnt}
 				onChange={e => setDept(e.target.value)}
 			/>
+			 
 			<button
 				onClick={() => {
 					handleAdd(deprtmnt);
@@ -36,7 +52,9 @@ function DepartmentList() {
 			>
 				Add
 			</button>
+			<span style={{color:"red"}}>{errors.department}</span>
 			</div>
+			
             <div className="departmentList">
 			<h1 style={{fontFamily:"sans-serif"}}>Listing Departments -{departmentList.length}</h1>
 			<table className="styled-table">

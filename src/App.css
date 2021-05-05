@@ -265,7 +265,7 @@
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 }
-.addDepartment > input {
+.addDepartment > input,.addDepartment>span {
 	grid-column: 2/5;
 }
 .addDepartment > button {
