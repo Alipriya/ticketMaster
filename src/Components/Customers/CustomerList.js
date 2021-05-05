@@ -15,6 +15,7 @@ function CustomerList(props)
      props.dispatch(startDeleteCustomer(id,props))
     }
     return(<div className="customerList">
+        <h1 style={{fontFamily:"sans-serif"}}>Customer List -{props.customers.length}</h1>
      <Link to="/addCustomer">Add Customer</Link>
      
              <table className="styled-table">
