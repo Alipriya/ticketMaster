@@ -17,6 +17,8 @@ function TicketForm(props) {
 	const [message, setMessage] = useState(
 		props.ticketData ? props.ticketData.message : ""
 	);
+	const [errors, setErrors] = useState({});
+
 	const customers = useSelector(state => {
 		return state.customers;
 	});
@@ -29,10 +31,52 @@ function TicketForm(props) {
 	});
 	const onChangeValue = e => {
 		setPriority(e.target.value);
+		setErrors({})
 	};
 	const handleChange = e => {
 		setMessage(e.target.value);
+		setErrors({})
 	};
+	function validate() {
+		let errors = {};
+
+		let isValid = true;
+		if (!customerName || customerName=="Select") {
+			isValid = false;
+
+			errors["customer"] = "Please select your department.";
+		}
+		
+
+		if (!departmentName || departmentName=="Select") {
+			isValid = false;
+
+			errors["department"] = "Please select your department.";
+		}
+		
+		if (!empName || empName=="Select") {
+			isValid = false;
+
+			errors["employee"] = "Please select the employee whom you want to assign the ticket.";
+		}
+		
+		if(!priority)
+		{
+			isValid=false;
+			errors["priority"]="Please select an option"
+		}
+		if (!message) {
+			isValid = false;
+
+			errors["message"] = "Message field cannot be blank.";
+		}
+		
+
+		setErrors(errors);
+
+		return isValid;
+	}
+	
 	const handleSubmit = () => {
 		const formData = {
 			customer: customerName,
@@ -43,7 +87,10 @@ function TicketForm(props) {
 			code: "DCT-" + Math.floor(Math.random() * 100)
 		};
 		console.log(formData);
+		if (validate()) {
 		props.handleSubmit(formData);
+		alert("Form Submitted");
+		}
 	};
 	return (
 		<div>
@@ -55,6 +102,7 @@ function TicketForm(props) {
 					value={customerName}
 					onChange={e => {
 						setCustomerName(e.target.value);
+						setErrors({})
 					}}
 				>
 					<option>Select</option>
@@ -66,13 +114,16 @@ function TicketForm(props) {
 						);
 					})}
 				</select>
+				<span>{errors.customer}</span>
+
 				<br />
 				<label>
 					Department Name<span className="manda">*</span>
 				</label>
 				<select
 					value={departmentName}
-					onChange={e => setDepartmentName(e.target.value)}
+					onChange={e => {setDepartmentName(e.target.value) 
+						setErrors({})}}
 				>
 					<option>Select</option>
 					{departmentData.map(dept => {
@@ -83,6 +134,8 @@ function TicketForm(props) {
 						);
 					})}
 				</select>
+				<span>{errors.department}</span>
+
 				<br />
 				<label>
 					Employee Name<span className="manda">*</span>
@@ -91,6 +144,7 @@ function TicketForm(props) {
 					value={empName}
 					onChange={e => {
 						setEmpName(e.target.value);
+						setErrors({})
 					}}
 				>
 					<option>Select</option>
@@ -106,6 +160,8 @@ function TicketForm(props) {
 							);
 						})}
 				</select>
+				<span>{errors.employee}</span>
+
 				<br />
 				<label>
 					Priority<span className="manda">*</span>
@@ -133,6 +189,8 @@ function TicketForm(props) {
 					/>{" "}
 					Low
 				</div>
+				<span>{errors.priority}</span>
+
 				<label>
 					Message<span className="manda">*</span>
 				</label>
@@ -143,6 +201,8 @@ function TicketForm(props) {
 					value={message}
 					onChange={handleChange}
 				/>
+				                <span>{errors.message}</span>
+
 				<br />
 			</form>
 			<div
