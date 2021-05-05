@@ -60,7 +60,7 @@ function DepartmentList() {
 			<table className="styled-table">
 				<thead>
 					<tr>
-						<th>Name</th>
+						<th>Department Name</th>
 						<th
 							style={{
 								display: "flex",

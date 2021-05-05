@@ -20,9 +20,9 @@ function CustomerList(props)
              <table className="styled-table">
                  <thead>
                      <tr>
-                         <td>Name</td>
-                         <td>Email</td>
-                         <td>Mobile</td>
+                         <td>Customer Name</td>
+                         <td>Customer Email</td>
+                         <td>Customer Mobile</td>
                          <td className="ActionTitle">Actions</td>
                      </tr>
                  </thead>

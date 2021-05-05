@@ -20,10 +20,10 @@ return(<div className="employeeList">
     <table className="styled-table">
         <thead >
             <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Mobile</th>
-            <th>Department</th>
+            <th>Employee Name</th>
+            <th>Employee Email</th>
+            <th>Employee Mobile</th>
+            <th>Employee Department</th>
             <th className="ActionTitle">Actions</th>
             </tr>
         </thead>

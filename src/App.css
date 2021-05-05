@@ -278,3 +278,11 @@
     background-color: #41007F;
     color: white;
 }
+
+.charts{
+	display: flex;
+    justify-content: center;
+    font-size: 27px;
+    font-family: sans-serif;
+    color: blueviolet;
+}

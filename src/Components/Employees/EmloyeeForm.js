@@ -96,7 +96,7 @@ function EmployeeForm(props) {
 				style={{ background: Employee, backgroundSize: "cover" }}
 			>
 				<label>
-					Name<span className="manda">*</span>
+					Employee Name<span className="manda">*</span>
 				</label>
 				<input
 					placeholder="Enter employee name"
@@ -110,7 +110,7 @@ function EmployeeForm(props) {
                 <span>{errors.name}</span>
 				<br />
 				<label>
-					Email<span className="manda">*</span>
+				Employee Email<span className="manda">*</span>
 				</label>
 				<input
 					type="text"
@@ -124,7 +124,7 @@ function EmployeeForm(props) {
                 <span>{errors.email}</span>
 				<br />
 				<label>
-					Mobile<span className="manda">*</span>
+				Employee Mobile<span className="manda">*</span>
 				</label>
 				<input
 					type="text"
@@ -138,7 +138,7 @@ function EmployeeForm(props) {
                 <span>{errors.mobile}</span>
 				<br />
 				<label>
-					Department<span className="manda">*</span>
+				Employee Department<span className="manda">*</span>
 				</label>
 				<select
 					value={department}

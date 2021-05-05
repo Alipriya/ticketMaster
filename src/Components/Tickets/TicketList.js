@@ -101,7 +101,7 @@ const pendingTickets = ticketsData.filter(ticket=>!ticket.isResolved)
          </tbody>
      
         </table>
-        <h3>Data on Pending Tickets</h3>
+        <h3 className="charts">Data on Pending Tickets</h3>
         <Chart
                     chartType="PieChart"
                     width="100%"
@@ -116,7 +116,7 @@ const pendingTickets = ticketsData.filter(ticket=>!ticket.isResolved)
                     data={data2}
                     options={{
                         chart: {
-                            title: 'Tickets By Department',
+                            title: 'Open Tickets By Department',
                         }
                     }}
                      />
