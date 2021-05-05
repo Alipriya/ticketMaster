@@ -2,10 +2,11 @@ import React from 'react'
 import {connect} from 'react-redux'
 function CustomerShow(props)
 {
-    return(<div>
-        <h1>Customer Name--{props.customer.name}</h1>
-        <h1>Customer Email----{props.customer.email}</h1>
-        <h1>Customer Mobile---{props.customer.mobile}</h1>
+    return(<div className="Form">
+        <h1 style={{color:"blue"}}>Customer Details</h1>
+        <h1>Customer Name: <span style={{color:"blue"}}>{props.customer.name}</span></h1>
+        <h1>Customer Email: <span style={{color:"blue"}}>{props.customer.email}</span></h1>
+        <h1>Customer Mobile: <span style={{color:"blue"}}>{props.customer.mobile}</span></h1>
     </div>)
 
 }

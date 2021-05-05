@@ -28,14 +28,13 @@ function TicketShow(props)
     })
     console.log("employees Data",employeeData)
 return(
-    <div>
-    <h1>Ticket Details</h1>
+    <div className="Form">
+    <h1 style={{color:"blue"}}>Ticket Details</h1>
     
-    
-    <h1>Name of the Customer ---{customerData.name}</h1>
-    <h1>Name of the Department ---{departmentData.name}</h1>
-    <h1>Assigned to ---{employeeData.name}</h1>
-    <h1>Message---{ticketShowData.message}</h1>
+    <h1>Name of the Customer: <span style={{color:"blue"}}>{customerData.name}</span></h1>
+    <h1>Name of the Department: <span style={{color:"blue"}}>{departmentData.name}</span></h1>
+    <h1>Assigned to: <span style={{color:"blue"}}>{employeeData.name}</span></h1>
+    <h1>Message: <span style={{color:"blue"}}>{ticketShowData.message}</span></h1>
    
     </div>
 )

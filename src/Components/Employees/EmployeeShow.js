@@ -7,12 +7,12 @@ function EmployeeShow(props)
             return emp._id==props.match.params.id
         })
     })
-    return(<div>
-        <h1>Employee Details</h1>
-        <h2>Employee Name -{employeeDetail.name}</h2>
-        <h2>Employee Email -{employeeDetail.email}</h2>
-        <h2>Employee Mobile -{employeeDetail.mobile}</h2>
-        <h2>Employee Department-{employeeDetail.department.name}</h2>
+    return(<div className="Form">
+        <h1 style={{color:"blue"}}>Employee Details</h1>
+        <h2>Employee Name: <span style={{color:"blue"}}>{employeeDetail.name}</span></h2>
+        <h2>Employee Email: <span style={{color:"blue"}}>{employeeDetail.email}</span></h2>
+        <h2>Employee Mobile: <span style={{color:"blue"}}>{employeeDetail.mobile}</span></h2>
+        <h2>Employee Department: <span style={{color:"blue"}}>{employeeDetail.department.name}</span></h2>
     </div>)
 
 }
