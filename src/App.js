@@ -14,14 +14,20 @@ import TicketAdd from "./Components/Tickets/TicketAdd";
 import TicketEdit from "./Components/Tickets/TicketEdit";
 import TicketShow from "./Components/Tickets/TicketShow";
 import "./App.css";
+import Register from './Components/Register'
+import Login from './Components/Login'
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import Logout from "./Components/Logout";
 function App() {
 	return (
 		<BrowserRouter>
 			<div className="App">
 				<Header />
 				<Switch>
+					<Route path="/users/logout" component={Logout}/>
+					<Route path="/users/register" component={Register}/>
+					<Route path="/users/login" component={Login} />
 					<Route path="/customersEdit/:id" component={CustomerEdit} />
 					<Route path="/addCustomer" component={CustomerAdd} />
 					<Route path="/customerShow/:id" component={CustomerShow} />

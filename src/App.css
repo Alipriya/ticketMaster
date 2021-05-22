@@ -30,14 +30,15 @@
 	background-color: #27271b;
 	height: 1px;
 }
-.homeLink {
+.homeLink,.registerLink {
 	grid-column: 2 / span 2;
 	color: #0e1f58;
 	font-size: 14px;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.customersLink {
+
+.customersLink,.loginLink {
 	grid-column: 4 / span 2;
 	color: #0e1f58;
 	font-size: 14px;
@@ -226,7 +227,7 @@
 .customerList,
 .employeeList,
 .departmentList,
-.ticketList {
+.ticketList,.registerLink,.loginLink {
 	display: grid;
 }
 .Actions {
