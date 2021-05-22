@@ -10,7 +10,7 @@ const Logout = props => {
 		dispatch(logoutUser(props));
 	};
 	return (
-		<div>
+		<div style={{display:"grid",justifyContent:"center"}}>
 			<button
 				style={{ height: "50px" }}
 				className="button"
