@@ -1,13 +1,22 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
-import {setStartDelete,setCloseTicket} from '../../Actions/TicketAction'
+import {setStartDelete,setCloseTicket,set_Start_Tickets} from '../../Actions/TicketAction'
+import { setStartEmployees } from "../../Actions/EmployeeAction";
+import { startSetCustomers } from "../../Actions/CustomerAction";
+import { startSetDepartment } from "../../Actions/DepartmentAction";
 import "../../App.css"
 import Chart from 'react-google-charts'
 
 function TicketList()
 {
     let dispatch=useDispatch()
+    useEffect(()=>{
+        dispatch(startSetCustomers());
+		dispatch(setStartEmployees());
+		dispatch(startSetDepartment());
+		dispatch(set_Start_Tickets());
+    },[])
 const ticketsData=useSelector((state)=>{
     return state.tickets
 })
@@ -15,6 +24,7 @@ const ticketsData=useSelector((state)=>{
 const customersData=useSelector((state)=>{
     return state.customers
 })
+console.log("check",customersData)
 const departmentData=useSelector((state)=>{
     return state.departments
 })
@@ -24,6 +34,7 @@ const employeesData=useSelector((state)=>{
 const findDepartment = (id) => {
     return departmentData.find(dept => dept._id == id)
 }
+    
 const pendingTickets = ticketsData.filter(ticket=>!ticket.isResolved)
         const high = pendingTickets.filter(ticket=>ticket.priority == 'High').length
         const medium = pendingTickets.filter(ticket=>ticket.priority == 'Medium').length
@@ -73,15 +84,15 @@ const pendingTickets = ticketsData.filter(ticket=>!ticket.isResolved)
                  
                  <tr>
                      <td><Link to={`/ticketShow/${ticket._id}`}>{ticket.code}</Link></td>
-                     <td>{customersData.find((cust)=>{
+                     {customersData && customersData.length>0?(<td>{customersData.find((cust)=>{
                         return cust._id==ticket.customer
-                          })["name"]}</td>
-                    <td>{employeesData.find((emp)=>{
+                          })["name"]}</td>):<td></td>}
+                    {employeesData && employeesData.length>0?(<td>{employeesData.find((emp)=>{
                         return emp._id==ticket.employees[0]._id
-                    })["name"]}</td>
-                     <td>{departmentData.find((dept)=>{
+                    })["name"]}</td>):<td></td>}
+                     {departmentData && departmentData.length>0?<td>{departmentData.find((dept)=>{
                          return ticket.department==dept._id
-                     })["name"]}</td>
+                     })["name"]}</td>:<td></td>}
                      <td>{ticket.priority}</td>
                      <td>{ticket.message}</td>
                      {ticket.isResolved?

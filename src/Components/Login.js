@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch ,useSelector} from "react-redux";
 import {startLocalStorage,getUserDetails} from '../Actions/UserAction'
+import { setStartEmployees } from "../Actions/EmployeeAction";
+import { startSetCustomers } from "../Actions/CustomerAction";
+import { startSetDepartment } from "../Actions/DepartmentAction";
+import { set_Start_Tickets } from "../Actions/TicketAction";
 function Login(props) {
     const dispatch = useDispatch();
     const users=useSelector((state)=>{
@@ -18,7 +22,9 @@ function Login(props) {
 		if (validate()) {
             //write dispatch here
             dispatch(startLocalStorage(formData,props))
-            dispatch(getUserDetails())
+			dispatch(getUserDetails())
+			
+		
 			//alert("Form Submitted");
 		}
 		

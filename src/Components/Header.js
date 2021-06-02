@@ -25,7 +25,7 @@ const Header=()=>{
     <hr className="line"/>
     {
 
-    localStorage.getItem("token") && users.token?
+    localStorage.getItem("token") && users.token||localStorage.getItem("token") && users._id?
     <div className="header">
       <Link to="/" className="homeLink">Home</Link>
       <Link to="/customers" className="customersLink">Customers</Link>

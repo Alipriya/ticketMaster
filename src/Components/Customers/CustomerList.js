@@ -1,12 +1,13 @@
 import React,{useEffect} from 'react' 
-import {connect} from 'react-redux'
+import {connect,useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
 import { startSetCustomers,startDeleteCustomer } from '../../Actions/CustomerAction'
 import "../../App.css"
 function CustomerList(props)
 {
+    let dispatch = useDispatch();
     useEffect(()=>{
-        
+        dispatch(startSetCustomers());
     },[])
     
     function handleRemove(id)

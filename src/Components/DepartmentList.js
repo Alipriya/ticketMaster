@@ -1,15 +1,19 @@
 import { React, useEffect, useState } from "react";
+
 import { useSelector, useDispatch } from "react-redux";
 import {
 	setDeleteDepartment,
-	setAddDepartment
+	setAddDepartment,
+	startSetDepartment
 } from "../Actions/DepartmentAction";
 import "../App.css";
 function DepartmentList() {
 	const [deprtmnt, setDept] = useState("");
     const [errors, setErrors] = useState({});
 	let dispatch = useDispatch();
-	useEffect(() => {}, []);
+	useEffect(() => {
+		dispatch(startSetDepartment())
+	}, []);
 	let departmentList = useSelector(state => {
 		return state.departments;
 	});

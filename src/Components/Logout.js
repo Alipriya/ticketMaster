@@ -7,6 +7,7 @@ const Logout = props => {
 	const [show, setShow] = useState(false);
 	const dispatch = useDispatch();
 	const handleLogout = () => {
+		console.log("logout")
 		dispatch(logoutUser(props));
 	};
 	return (

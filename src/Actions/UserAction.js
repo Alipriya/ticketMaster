@@ -59,6 +59,7 @@ return (dispatch)=>{
     .then((response)=>{
         console.log("check",response.data)
         dispatch(getUser(response.data))
+        
     })
     .catch((err)=>{
         console.log(err)
