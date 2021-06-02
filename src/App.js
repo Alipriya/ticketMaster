@@ -28,7 +28,8 @@ function App() {
 					<Route path="/users/logout" component={Logout}/>
 					<Route path="/users/register" component={Register}/>
 					<Route path="/users/login" component={Login} />
-					<Route path="/customersEdit/:id" component={CustomerEdit} />
+					{localStorage.getItem("token")?(<Switch>
+						<Route path="/customersEdit/:id" component={CustomerEdit} />
 					<Route path="/addCustomer" component={CustomerAdd} />
 					<Route path="/customerShow/:id" component={CustomerShow} />
 					<Route path="/customers" component={CustomerList} />
@@ -42,6 +43,9 @@ function App() {
 					<Route path="/addTicket" component={TicketAdd} />
 					<Route path="/tickets" component={TicketList} />
 					<Route path="/" component={Home} />
+					</Switch>):(<Route path="/users/login" component={Login} />)
+					}
+					
 				</Switch>
         <Footer/>
 			</div>
