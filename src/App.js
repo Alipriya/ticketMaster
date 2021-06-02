@@ -1,3 +1,4 @@
+import React from 'react'
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 import Home from "./Components/Home";
 import CustomerList from "./Components/Customers/CustomerList";
@@ -19,7 +20,11 @@ import Login from './Components/Login'
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Logout from "./Components/Logout";
+import {useSelector} from 'react-redux'
 function App() {
+	const users=useSelector((state)=>{
+		return state.user
+	  })
 	return (
 		<BrowserRouter>
 			<div className="App">
@@ -28,8 +33,8 @@ function App() {
 					<Route path="/users/logout" component={Logout}/>
 					<Route path="/users/register" component={Register}/>
 					<Route path="/users/login" component={Login} />
-					{localStorage.getItem("token")?(<Switch>
-						<Route path="/customersEdit/:id" component={CustomerEdit} />
+					{localStorage.getItem("token") && users.token||localStorage.getItem("token") && users._id ?(<Switch>
+					<Route path="/customersEdit/:id" component={CustomerEdit} />
 					<Route path="/addCustomer" component={CustomerAdd} />
 					<Route path="/customerShow/:id" component={CustomerShow} />
 					<Route path="/customers" component={CustomerList} />
