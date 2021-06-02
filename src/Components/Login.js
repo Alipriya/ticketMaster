@@ -25,8 +25,15 @@ function Login(props) {
 			dispatch(startLocalStorage(formData,props))
 			
 				//dispatch(getUserDetails())
+				//props.history.push("/")
+			if(users.error)
+			{
+				props.history.push("/users/login")
+			}
+			else{
 				props.history.push("/")
-			
+			}
+
 			
 			//alert("Form Submitted");
 		}
