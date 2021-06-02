@@ -19,11 +19,15 @@ function Login(props) {
 			email,
 			password
 		};
-		if (validate()) {
+		if (validate()==true ) {
+			console.log("login step1")
             //write dispatch here
-            dispatch(startLocalStorage(formData,props))
-			dispatch(getUserDetails())
-			props.history.push("/")
+			dispatch(startLocalStorage(formData,props))
+			
+				//dispatch(getUserDetails())
+				props.history.push("/")
+			
+			
 			//alert("Form Submitted");
 		}
 		

@@ -57,11 +57,16 @@ const Register = (props) => {
 		};
 
 		console.log(formData);
-		if (validate()) {
+		console.log("check userErrors",Object.keys(userError).length)
+		if (validate()){
 			//write dispatch here
-            dispatch(registerUser(formData,props))
+			dispatch(registerUser(formData))
+			setUsername("")
+			setEmail("")
+			setPassword("")
 			
 		}
+		
 	};
 	return (
 		<div>
@@ -119,6 +124,11 @@ const Register = (props) => {
 				<button className="button" onClick={handleSubmit}>
 					Register
 				</button>
+				{
+				   userError._id?
+				   <h1 style={{color:"green",fontWeight:"bold"}}>You are successfully registered with us.Please Login now.</h1>:
+				   <h2></h2>
+				}
 				
 			</form>
 		</div>

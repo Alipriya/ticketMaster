@@ -10,6 +10,7 @@ export const userReducer=(state={},action)=>
             console.log("check",action.payload)
             return {...action.payload}
         }
+        
         case 'REGISTER':{
             console.log("check",action.payload)
             return {...action.payload}

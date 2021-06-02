@@ -7,13 +7,13 @@ export const setRegister=(error)=>{
         payload:error
     }
 }
-export const registerUser=(formData,props)=>{
+export const registerUser=(formData)=>{
     return (dispatch)=>{
         axios.post("https://dct-ticket-master.herokuapp.com/users/register",formData)
        .then((response)=>{
-        console.log("check response",response.data)
+        console.log("check response in register",response.data)
         dispatch(setRegister(response.data))
-        props.history.push("/users/login")
+        //props.history.push("/users/login")
        })
        .catch((err)=>{
            console.log(err)
@@ -31,7 +31,7 @@ export const startLocalStorage=(formData,props)=>{
     return(dispatch)=>{
      axios.post("https://dct-ticket-master.herokuapp.com/users/login",formData)
      .then((response)=>{
-       console.log(response.data)
+       console.log("inside setting localStorage",response.data)
        const {token}=response.data
        localStorage.setItem("token",token)
        dispatch(loginUser(response.data))
