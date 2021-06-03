@@ -35,7 +35,15 @@ export const startLocalStorage=(formData,props)=>{
        const {token}=response.data
        localStorage.setItem("token",token)
        dispatch(loginUser(response.data))
-       props.history.push("/")
+       if(localStorage.getItem("token")!=="undefined")
+       {
+           alert("You are successfully logged in")
+           props.history.push("/")
+       }
+       else{
+           props.history.push("/users/login")
+       }
+       //props.history.push("/")
      })
      .catch((err)=>{
          console.log(err)

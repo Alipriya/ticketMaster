@@ -20,19 +20,12 @@ function Login(props) {
 			password
 		};
 		if (validate()==true ) {
-			console.log("login step1")
             //write dispatch here
 			dispatch(startLocalStorage(formData,props))
 			
 				//dispatch(getUserDetails())
 				//props.history.push("/")
-			if(users.error)
-			{
-				props.history.push("/users/login")
-			}
-			else{
-				props.history.push("/")
-			}
+			
 
 			
 			//alert("Form Submitted");
@@ -106,8 +99,9 @@ function Login(props) {
 				<button className="button" onClick={handleLogin}>
 					Login
 				</button>
+				
                 {users.error?
-            (<h1 style={{color:"red"}}>{users.error}</h1>):<></>   
+            (<h1 style={{color:"red"}}>Login failed because of the errors:{users.error}</h1>):<></>   
             }
 			</form>
 		</div>

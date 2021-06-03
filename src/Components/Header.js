@@ -8,7 +8,7 @@ const Header=()=>{
   })
     return(
     <div>
-      {localStorage.getItem("token")!=="undefined" ?
+      {localStorage.getItem("token")!=="undefined" && localStorage.length>0 ?
       <div className="header">
       <Link to="/users/logout">Logout</Link>
       </div>
