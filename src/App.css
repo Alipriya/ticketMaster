@@ -44,7 +44,7 @@
 	font-size: 14px;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.departmentsLink {
+.departmentsLink,.homeLink1 {
 	grid-column: 6 / span 2;
 	color: #0e1f58;
 	font-size: 14px;
