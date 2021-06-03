@@ -125,7 +125,7 @@ const Register = (props) => {
 					Register
 				</button>
 				{
-				   userError._id?
+				   userError && userError._id?
 				   <h1 style={{color:"green",fontWeight:"bold"}}>You are successfully registered with us.Please Login now.</h1>:
 				   <h2></h2>
 				}

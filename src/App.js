@@ -48,7 +48,11 @@ function App() {
 					<Route path="/addTicket" component={TicketAdd} />
 					<Route path="/tickets" component={TicketList} />
 					<Route path="/" component={Home} />
-					</Switch>):(<Route path="/users/login" component={Login} />)
+					
+					</Switch>):(<Switch>
+					<Route path="/users/login" component={Login} />
+					<Route path="/" component={Home} />
+					</Switch>)
 					}
 					
 				</Switch>

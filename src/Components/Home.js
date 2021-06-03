@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setStartEmployees } from "../Actions/EmployeeAction";
-import { startSetCustomers } from "../Actions/CustomerAction";
-import { startSetDepartment } from "../Actions/DepartmentAction";
-import { set_Start_Tickets } from "../Actions/TicketAction";
+// import { useDispatch } from "react-redux";
+// import { setStartEmployees } from "../Actions/EmployeeAction";
+// import { startSetCustomers } from "../Actions/CustomerAction";
+// import { startSetDepartment } from "../Actions/DepartmentAction";
+// import { set_Start_Tickets } from "../Actions/TicketAction";
 import Carousel  from '../Components/Carousel'
 import Helpdesk from './Helpdesk.jpeg'
 import ticketMaster from './ticketMaster.jpeg'
@@ -12,12 +12,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar,faFileContract } from '@fortawesome/free-solid-svg-icons'
 
 function Home() {
-	let dispatch = useDispatch();
+	//let dispatch = useDispatch();
 	useEffect(() => {
-		dispatch(startSetCustomers());
-		dispatch(setStartEmployees());
-		dispatch(startSetDepartment());
-		dispatch(set_Start_Tickets());
+		// dispatch(startSetCustomers());
+		// dispatch(setStartEmployees());
+		// dispatch(startSetDepartment());
+		// dispatch(set_Start_Tickets());
 	}, []);
 	return (
 		<div className="homePage">

@@ -1,6 +1,11 @@
 import axios from 'axios'
 //register user
 
+import { setStartEmployees } from "../Actions/EmployeeAction";
+import { startSetCustomers } from "../Actions/CustomerAction";
+import { startSetDepartment } from "../Actions/DepartmentAction";
+import { set_Start_Tickets } from "../Actions/TicketAction";
+
 export const setRegister=(error)=>{
     return{
         type:"REGISTER",
@@ -39,6 +44,10 @@ export const startLocalStorage=(formData,props)=>{
        {
            alert("You are successfully logged in")
            props.history.push("/")
+           dispatch(startSetCustomers());
+		dispatch(setStartEmployees());
+		dispatch(startSetDepartment());
+		dispatch(set_Start_Tickets());
        }
        else{
            props.history.push("/users/login")
